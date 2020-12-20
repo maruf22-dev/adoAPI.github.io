@@ -3,10 +3,9 @@
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>
         
-        <h3>Video Title</h3>
-        <p class="title"><p>
-        <p class="videoCode"></p>
-        <p class="status"></p>
+        <p id="title"><p>
+        <p id="videoCode"></p>
+        <p id="status"></p>
         <input type = "button" onclick = "getVideo('numb')" value = "Display">  
     </body>
     <script>
@@ -25,14 +24,14 @@
         },
         success: function (data) 
         {
-            $('.title').text(data.items[0].snippet.title);
-            $('.videoCode').text(data.items[0].id.videoId);
-            $('.status').text("successful");
+            $('#title').text(data.items[0].snippet.title);
+            $('#videoCode').text(data.items[0].id.videoId);
+            $('#status').text("successful");
             
         },
         error: function (response) 
         {
-            $('.status').text("unsuccessful");
+            $('#status').text("unsuccessful");
         }
     });
 }
