@@ -38,7 +38,7 @@
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>
         <input name="searchTxt" type="text" maxlength="512" id="searchTxt" class="searchField" placeholder="Search.."/>
-        <input name="searchAPI" type="text" maxlength="812" id="searchAPI" class="searchField" placeholder="API KEY/INDEX.."/>
+        <input name="searchAPI" type="text" maxlength="812" id="searchAPI" class="searchField" placeholder="API KEY/INDEX(UP TO 4).."/>
         <p id="title">Title: <p>
         <p id="videoCode">VideoCode: </p>
         <p id="status">Status: </p>
@@ -77,6 +77,9 @@
         let apiKey = document.getElementById("searchAPI").value;
         if(apiKey === '0') apiKey = 'AIzaSyDrh-HQqjnrtPsPg4N2sOiZHmXFLe6LNmE';
         if(apiKey === '1') apiKey = 'AIzaSyAu6Q1MnDAQfk1TiX7x8AdwdnBIkwyCRF4';
+        if(apiKey === '2') apiKey = 'AIzaSyAAG-MxxB6VhueIMKNgbbOzRvL10CMOIzE';
+        if(apiKey === '3') apiKey = 'AIzaSyCDndZXpCAMSCeuthk73pq7jon5KMHz0FQ';
+            
         console.log(query);
         console.log(apiKey) ;
         $.ajax({
