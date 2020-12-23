@@ -42,18 +42,41 @@
         <p id="title">Title: <p>
         <p id="videoCode">VideoCode: </p>
         <p id="status">Status: </p>
-        <input id="button" type = "button" onclick = "getVideo('getValueFromWebsite', 'getKeyFromWebsite')" value = "Check">  
+        <input id="button" type = "button" onclick = "getVideoFromSite()" value = "Check">  
     </body>
     <script>
         function getVideo(query, apiKey) 
         {
-        if(query === 'getValueFromWebsite') query = document.getElementById("searchTxt").value;
-        if(apiKey === 'getKeyFromWebsite')
+        $.ajax({
+        type: 'GET',
+        url: 'https://www.googleapis.com/youtube/v3/search',
+        data:
         {
-        let apiIndex = document.getElementById("searchAPI").value;
-        if(apiIndex === '0') apiKey = 'AIzaSyDrh-HQqjnrtPsPg4N2sOiZHmXFLe6LNmE';
-        if(apiIndex === '1') apiKey = 'AIzaSyAu6Q1MnDAQfk1TiX7x8AdwdnBIkwyCRF4';
+            key: apiKey,
+            q: query,
+            part: 'snippet',
+            maxResults: 1,
+            type: 'video',
+        },
+        success: function (data) 
+        {
+            $('#title').text(data.items[0].snippet.title);
+            $('#videoCode').text(data.items[0].id.videoId);
+            $('#status').text("successful");
+            
+        },
+        error: function (response) 
+        {
+            $('#status').text("unsuccessful");
         }
+    });
+}
+        function getVideoFromSite() 
+        {
+        query = document.getElementById("searchTxt").value;
+        let apiKey = document.getElementById("searchAPI").value;
+        if(apiKey === '0') apiKey = 'AIzaSyDrh-HQqjnrtPsPg4N2sOiZHmXFLe6LNmE';
+        if(apiKey === '1') apiKey = 'AIzaSyAu6Q1MnDAQfk1TiX7x8AdwdnBIkwyCRF4';
         console.log(query);
         console.log(apiKey) ;
         $.ajax({
