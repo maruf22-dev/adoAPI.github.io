@@ -41,7 +41,7 @@
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>
         <input name="searchTxt" type="text" maxlength="512" id="searchTxt" class="searchField" placeholder="Search.."/>
-        <input name="searchAPI" type="text" maxlength="812" id="searchAPI" class="searchField" placeholder="Key/Index (UP TO 4).."/>
+        <input name="searchAPI" type="text" maxlength="812" id="searchAPI" class="searchField" placeholder="Key/Index (UP TO 3).."/>
         <p id="title">Title: <p>
         <p id="videoCode">VideoCode: </p>
         <p id="status">Status: </p>
@@ -98,14 +98,14 @@
         },
         success: function (data) 
         {
-            $('#title').text(data.items[0].snippet.title);
-            $('#videoCode').text(data.items[0].id.videoId);
-            $('#status').text("successful");
+            $('#title').text('Title: ' + data.items[0].snippet.title);
+            $('#videoCode').text('Video code: ' + data.items[0].id.videoId);
+            $('#status').text("status: successful");
             
         },
         error: function (response) 
         {
-            $('#status').text("unsuccessful");
+            $('#status').text("Status: unsuccessful");
         }
     });
 }
