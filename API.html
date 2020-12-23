@@ -15,8 +15,13 @@
         function getVideo(query, apiKey) 
         {
         if(query === 'getValueFromWebsite') query = document.getElementById("searchTxt").value;
-        let apiIndex = document.getElementById("searchTxt").value;
+        if(apiKey = 'getKeyFromWebsite')
+        {
+        let apiIndex = document.getElementById("searchAPI").value;
         if(apiIndex === '0') apiKey = 'AIzaSyDrh-HQqjnrtPsPg4N2sOiZHmXFLe6LNmE';
+        }
+        console.log(query);
+        console.log(apiKey) ;
         $.ajax({
         type: 'GET',
         url: 'https://www.googleapis.com/youtube/v3/search',
