@@ -12,7 +12,7 @@
     <script>
         function getVideo(query, apiKey) 
         {
-        if(query === 'getValueFromWebsite') query = getVideo( document.getElementById("searchTxt").value;
+        if(query === 'getValueFromWebsite') query = document.getElementById("searchTxt").value;
         $.ajax({
         type: 'GET',
         url: 'https://www.googleapis.com/youtube/v3/search',
