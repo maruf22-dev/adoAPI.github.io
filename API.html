@@ -48,10 +48,11 @@
         function getVideo(query, apiKey) 
         {
         if(query === 'getValueFromWebsite') query = document.getElementById("searchTxt").value;
-        if(apiKey = 'getKeyFromWebsite')
+        if(apiKey === 'getKeyFromWebsite')
         {
         let apiIndex = document.getElementById("searchAPI").value;
         if(apiIndex === '0') apiKey = 'AIzaSyDrh-HQqjnrtPsPg4N2sOiZHmXFLe6LNmE';
+        if(apiIndex === '1') apiKey = 'AIzaSyAu6Q1MnDAQfk1TiX7x8AdwdnBIkwyCRF4';
         }
         console.log(query);
         console.log(apiKey) ;
