@@ -7,11 +7,12 @@
         <p id="title">Title: <p>
         <p id="videoCode">VideoCode: </p>
         <p id="status">Status: </p>
-        <input type = "button" onclick = "getVideo( document.getElementById("searchTxt").value, 'AIzaSyDrh-HQqjnrtPsPg4N2sOiZHmXFLe6LNmE')" value = "Check">  
+        <input type = "button" onclick = " 'getValueFromWebsite', 'AIzaSyDrh-HQqjnrtPsPg4N2sOiZHmXFLe6LNmE')" value = "Check">  
     </body>
     <script>
         function getVideo(query, apiKey) 
         {
+        if(query === 'getValueFromWebsite') query = getVideo( document.getElementById("searchTxt").value;
         $.ajax({
         type: 'GET',
         url: 'https://www.googleapis.com/youtube/v3/search',
