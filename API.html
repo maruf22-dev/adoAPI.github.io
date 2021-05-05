@@ -2,6 +2,13 @@
     <style> body { background-color:  #383d39; } </style>
     <style> p { color: white;} </style>
     <style> 
+        #conDiv
+        {
+            position: absolute;
+            left: 0.3%;
+            padding: 50px;
+            background-color: #222423; 
+        }
         #button 
         {
             position: absolute;
@@ -38,6 +45,7 @@
     </style>
     
     <body>
+        <div id ="conDiv">
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>
         <input name="searchTxt" type="text" maxlength="512" id="searchTxt" class="searchField" placeholder="Search.."/>
@@ -45,7 +53,8 @@
         <p id="title">Title: <p>
         <p id="videoCode">VideoCode: </p>
         <p id="status">Status: </p>
-        <input id="button" type = "button" onclick = "getVideoFromSite()" value = "Check">  
+        <input id="button" type = "button" onclick = "getVideoFromSite()" value = "Check">
+        </div>
     </body>
     <script>
         function getVideo(query, apiKey) 
