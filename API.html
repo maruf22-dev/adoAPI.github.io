@@ -2,18 +2,21 @@
     <style> body { background-color:  #383d39; } </style>
     <style> p { color: #dbdbdb;} </style>
     <style> 
+        *
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
         #conDiv
         {
-            position: absolute;
-            left: 0.5%;
+           left: 0.5%;
             padding: 50px;
             background-color: #222423; 
             border-radius: 12px;
         }
         #button 
         {
-            position: absolute;
-            left: 0.5%;
             top: 32%;
             background-color: #222423; 
             color: #dbdbdb;
@@ -26,8 +29,6 @@
         } 
         #searchTxt, #searchAPI
         {
-            position: absolute;
-            left: .5%;
             background-color: #222423; 
             color: #dbdbdb;
             padding: 18px;
@@ -56,8 +57,8 @@
         <p id="videoCode">VideoCode: </p>
         <p id="status">Status: </p>
         </div>
-        <input name="searchTxt" type="text" maxlength="512" id="searchTxt" class="searchField" placeholder="Search.."/>
         <input name="searchAPI" type="text" maxlength="812" id="searchAPI" class="searchField" placeholder="Key/Index (UP TO 3).."/>
+        <input name="searchTxt" type="text" maxlength="512" id="searchTxt" class="searchField" placeholder="Search.."/>
         <input id="button" type = "button" onclick = "getVideoFromSite()" value = "Check">
     </body>
     <script>
